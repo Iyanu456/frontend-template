@@ -20,10 +20,10 @@ export const UserProvider = ({ children }) => {
 
   const login = async ({ email, password }) => {
     try {
-      const res = await api.post('/login', { email, password });
+      const res = await api.post('/', { email, password });
       setCookies('token', res.data.token);
       setCookies('name', res.data.name);
-      navigate('/dashboard/user');
+      navigate('/');
       return res.data;
     } catch (error) {
       console.error('Login Error:', error);
@@ -37,10 +37,10 @@ export const UserProvider = ({ children }) => {
 
   const signup = async ({ email, password, role }) => {
     try {
-      const res = await api.post('/signup', { email, password, role });
+      const res = await api.post('/', { email, password, role });
       setCookies('token', res.data.token);
       setCookies('name', res.data.name);
-      navigate('/dashboard/user');
+      navigate('/');
       return res.data;
     } catch (error) {
       console.error('Signup Error:', error);

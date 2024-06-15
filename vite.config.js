@@ -6,6 +6,6 @@ import react from "@vitejs/plugin-react";
 const _plugins = [react()];
 _plugins.unshift(MillionLint.vite());
 export default defineConfig({
-  plugins: [react()],
-  _plugins,
+plugins: [react()],
+_plugins,
 });
